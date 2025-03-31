@@ -1,4 +1,4 @@
-# Aster aI - Revolutionizing Hedge Funds 
+# Aster AI - Revolutionizing Hedge Funds 
 
 ## The Premier DeFAI Platform on Binance Smart Chain
 
