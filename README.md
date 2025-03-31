@@ -96,15 +96,6 @@ export default tseslint.config({
 })
 ```
 
-## Connect Your Wallet
-
-To use Aster for trading on BSC, connect your wallet:
-
-1. Click the "Connect Wallet" button in the top right corner
-2. Select your preferred wallet provider (MetaMask recommended)
-3. Approve the connection request in your wallet
-4. Your BSC address will now be connected to Aster
-
 ## License
 
 [MIT](LICENSE)
