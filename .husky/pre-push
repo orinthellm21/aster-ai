@@ -1,0 +1,19 @@
+echo '🏗️👷 Styling, testing and building your project before pushing'
+
+# # Check lint
+yarn lint ||
+(
+    echo '👕👕👕👕👕👕👕 - Your lint looks disgusting. 🤢🤮🤢🤮
+            Linter Check Failed. Fix all errors and warnings bellow, add changes and try commit and push again.';
+    false;
+)
+
+yarn build ||
+(
+    echo '👕👕👕👕👕👕👕 - Your build looks disgusting. 🤢🤮🤢🤮
+            TSC Check Failed. Fix all errors and warnings bellow, add changes and try commit and push again.';
+    false;
+)
+
+# If everything passes... Now we can push
+echo '✅✅✅✅ You win this time... I am pushing this now. ✅✅✅✅'
