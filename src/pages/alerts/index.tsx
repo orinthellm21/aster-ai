@@ -315,7 +315,7 @@ const AlertsPageLayout: FC<Props> = (props) => {
                       number: +(item?.token_details?.volume_24h ?? 0),
                       decPlaces: 3,
                       formatType: 'currency',
-                      minPlaces: 1e6,
+                      minPlaces: 1e9,
                     })}
                   </p>
                 </div>

@@ -28,7 +28,7 @@ export const formatNumberWithCommas = (
 ) => {
   const fixedNum = digits
     ? parseFloat((+num).toFixed(digits))
-    : +num < 1e-6 && +num !== 0
+    : +num < 1e-9 && +num !== 0
       ? num
       : parseFloat(`${num}`);
 
