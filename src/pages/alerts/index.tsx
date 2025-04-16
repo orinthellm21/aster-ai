@@ -30,100 +30,100 @@ const AlertsPageLayout: FC<Props> = (props) => {
     >
       <div className="flex w-full flex-1 flex-col gap-4 overflow-y-auto">
         {(data ?? []).map((item) => {
-          // if (item?.signal) {
-          //   return (
-          //     <div className="mx-auto rounded-xl border border-[#494949] bg-[#181818] p-4 sm:w-[80%]">
-          //       <div className="flex items-center justify-between">
-          //         <p className="text-lg font-bold text-[#DCDCDC]">New pump</p>
-          //         <p className="text-xs text-[#A3A3A3]">
-          //           {timeDifference2(item.date * 1000)}
-          //         </p>
-          //       </div>
+          if (item?.signal) {
+            return (
+              <div className="mx-auto rounded-xl border border-[#494949] bg-[#181818] p-4 sm:w-[80%]">
+                <div className="flex items-center justify-between">
+                  <p className="text-lg font-bold text-[#DCDCDC]">New pump</p>
+                  <p className="text-xs text-[#A3A3A3]">
+                    {timeDifference2(item.date * 1000)}
+                  </p>
+                </div>
 
-          //       <div className="mt-2 grid grid-cols-2 gap-2 md:grid-cols-3">
-          //         <div className="flex gap-3.5">
-          //           <Avatar className="size-12 rounded-xl">
-          //             <AvatarImage
-          //               className="rounded-xl object-cover"
-          //               src={item.token_details?.logo}
-          //             ></AvatarImage>
-          //             <AvatarFallback className="rounded-xl">
-          //               {item.token_details?.symbol.at(0)?.toUpperCase()}
-          //             </AvatarFallback>
-          //           </Avatar>
-          //           <div>
-          //             <p className="text-sm font-medium">
-          //               {item.token_details?.symbol}
-          //             </p>
-          //             <div className="flex items-center gap-1">
-          //               <p className="text-xs text-[#A3A3A3]">
-          //                 {truncateAddress(item.ca)}
-          //               </p>
-          //               <CopyButton text={item.ca ?? ''} />
-          //             </div>
-          //           </div>
-          //         </div>
-          //       </div>
+                <div className="mt-2 grid grid-cols-2 gap-2 md:grid-cols-3">
+                  <div className="flex gap-3.5">
+                    <Avatar className="size-12 rounded-xl">
+                      <AvatarImage
+                        className="rounded-xl object-cover"
+                        src={item.token_details?.logo}
+                      ></AvatarImage>
+                      <AvatarFallback className="rounded-xl">
+                        {item.token_details?.symbol.at(0)?.toUpperCase()}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="text-sm font-medium">
+                        {item.token_details?.symbol}
+                      </p>
+                      <div className="flex items-center gap-1">
+                        <p className="text-xs text-[#A3A3A3]">
+                          {truncateAddress(item.ca)}
+                        </p>
+                        <CopyButton text={item.ca ?? ''} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-          //       <p
-          //         className="inline-block bg-clip-text py-4 text-4xl font-bold text-transparent md:text-8xl"
-          //         style={{
-          //           backgroundImage:
-          //             'linear-gradient(90deg, #FFFFFF 0%, #999999 100%)',
-          //         }}
-          //       >
-          //         {item?.signal}
-          //       </p>
+                <p
+                  className="inline-block bg-clip-text py-4 text-4xl font-bold text-transparent md:text-8xl"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(90deg, #FFFFFF 0%, #999999 100%)',
+                  }}
+                >
+                  {item?.signal}
+                </p>
 
-          //       <div className="mt-3 flex items-center gap-5">
-          //         <Button
-          //           className="text-foreground flex-1 bg-[#262626] hover:bg-[#666666]"
-          //           onClick={() => {
-          //             const message = encodeURIComponent(
-          //               `top holders of ${item.ca}`,
-          //             );
+                <div className="mt-3 flex items-center gap-5">
+                  <Button
+                    className="text-foreground flex-1 bg-[#262626] hover:bg-[#666666]"
+                    onClick={() => {
+                      const message = encodeURIComponent(
+                        `top holders of ${item.ca}`,
+                      );
 
-          //             navigate(`/conversations?message=${message}`);
-          //           }}
-          //         >
-          //           Top Holders
-          //         </Button>
-          //         <Button
-          //           className="text-foreground flex-1 bg-[#262626] hover:bg-[#666666]"
-          //           onClick={() => {
-          //             const message = encodeURIComponent(
-          //               `dev check ${item.ca}`,
-          //             );
+                      navigate(`/conversations?message=${message}`);
+                    }}
+                  >
+                    Top Holders
+                  </Button>
+                  <Button
+                    className="text-foreground flex-1 bg-[#262626] hover:bg-[#666666]"
+                    onClick={() => {
+                      const message = encodeURIComponent(
+                        `dev check ${item.ca}`,
+                      );
 
-          //             navigate(`/conversations?message=${message}`);
-          //           }}
-          //         >
-          //           Dev Analysis
-          //         </Button>
-          //         <Button
-          //           className="text-foreground flex-1 bg-[#262626] hover:bg-[#666666]"
-          //           onClick={() => {
-          //             const message = encodeURIComponent(
-          //               `token info of ${item.ca}`,
-          //             );
+                      navigate(`/conversations?message=${message}`);
+                    }}
+                  >
+                    Dev Analysis
+                  </Button>
+                  <Button
+                    className="text-foreground flex-1 bg-[#262626] hover:bg-[#666666]"
+                    onClick={() => {
+                      const message = encodeURIComponent(
+                        `token info of ${item.ca}`,
+                      );
 
-          //             navigate(`/conversations?message=${message}`);
-          //           }}
-          //         >
-          //           Onchain Data
-          //         </Button>
-          //         {/* <Button
-          //       className="text-foreground flex-1 bg-[#262626] hover:bg-[#666666]"
-          //       onClick={() => onShare(item?.ca)}
-          //       disabled={shareLoading}
-          //     >
-          //       {shareLoading && <Loader2 className="animate-spin" />}
-          //       Share on X
-          //     </Button> */}
-          //       </div>
-          //     </div>
-          //   );
-          // }
+                      navigate(`/conversations?message=${message}`);
+                    }}
+                  >
+                    Onchain Data
+                  </Button>
+                  {/* <Button
+                className="text-foreground flex-1 bg-[#262626] hover:bg-[#666666]"
+                onClick={() => onShare(item?.ca)}
+                disabled={shareLoading}
+              >
+                {shareLoading && <Loader2 className="animate-spin" />}
+                Share on X
+              </Button> */}
+                </div>
+              </div>
+            );
+          }
 
           return (
             <div
