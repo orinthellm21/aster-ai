@@ -15,7 +15,7 @@ export function formatNumber(num: number) {
 
     const subscriptZero = zeroCount
       .toString()
-      .split('')
+      .split(' ')
       .map((digit: any) => subscriptDigits[digit])
       .join('');
 
